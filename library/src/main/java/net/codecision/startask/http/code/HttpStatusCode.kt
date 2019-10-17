@@ -13,6 +13,8 @@ data class HttpStatusCode(val value: Int) {
 
     override fun hashCode(): Int = value.hashCode()
 
+    fun isFailure() = !isSuccess()
+
     /**
      * Checks if a given status code is a success code according to HTTP standards.
      *
@@ -23,6 +25,8 @@ data class HttpStatusCode(val value: Int) {
     fun isNotOk() = !isOk()
 
     fun isOk() = equals(OK)
+
+    fun isNotCreated() = !isCreated()
 
     fun isCreated() = equals(Created)
 
