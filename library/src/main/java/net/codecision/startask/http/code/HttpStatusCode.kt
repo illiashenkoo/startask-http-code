@@ -38,6 +38,8 @@ data class HttpStatusCode(val value: Int) {
 
     fun isNotFound() = equals(NotFound)
 
+    fun isUnprocessableEntity() = equals(UnprocessableEntity)
+
     fun isInternalServerError() = equals(InternalServerError)
 
     companion object {
@@ -100,6 +102,8 @@ data class HttpStatusCode(val value: Int) {
         val UpgradeRequired = HttpStatusCode(426)
         val TooManyRequests = HttpStatusCode(429)
         val RequestHeaderFieldTooLarge = HttpStatusCode(431)
+
+        /* Server Error */
 
         val InternalServerError = HttpStatusCode(500)
         val NotImplemented = HttpStatusCode(501)
